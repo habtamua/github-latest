@@ -13,5 +13,5 @@ if __name__ == "__main__":
 
     response = requests.get("https://api.github.com/users/{}/events".format(username))
     events = json.loads(response.content)
-
-    print(events[0]['created_at'])
+    print("name of repo:", format(events[0]['repo']['name']))
+    print("created_at:", events[0]['created_at'])
